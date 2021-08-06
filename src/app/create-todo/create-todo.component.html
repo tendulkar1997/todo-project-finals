@@ -1,0 +1,44 @@
+<html>
+<head>
+  <script>
+    function validate() {
+      let id = document.id.value;
+      let todoName = document.todoName.value;
+      if (todoName == null) {
+        alert("Todo Name cannot be blank.")
+        return false;
+      } else if (isNaN(id)) {
+        alert("id should be Integer only")
+        return false;
+      }
+    }
+  </script>
+</head>
+</html>
+<div class="col-md-6 offset-md-3">
+  <h3> Create Todo </h3>
+  <form (ngSubmit) = "onSubmit()" name="createForm" (submit)="validate()">
+
+    <div class="form-group">
+      <label> Todo Id</label>
+      <input type="text" class ="form-control" id = "id"
+             [(ngModel)] = "todo.id" name = "id" onclick="return validate()">
+    </div>
+    <div class="form-group">
+      <label> Todo Name</label>
+      <input type="text" class ="form-control" id = "todoName"
+             [(ngModel)] = "todo.todoName" name = "todoName" onclick="return validate()">
+    </div>
+
+
+    <div class="form-group">
+      <label> isActive</label>
+      <input type="text" class ="form-control" id = "isActive"
+             [(ngModel)] = "todo.isActive" name = "isActive">
+    </div>
+
+    <button class = "btn btn-success" type ="submit">Submit</button>
+
+  </form>
+</div>
+

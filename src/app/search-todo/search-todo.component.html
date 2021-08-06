@@ -1,0 +1,31 @@
+<div class="col-md-6 offset-md-3">
+  <h3> Search Todo </h3>
+  <form>
+
+    <div class="form-group">
+      <label> Todo Id:</label>
+      <input type="text" id="id1" name="id1" #id1>
+      <button type="button" (click)="onSearch(id1.value)">Search</button>
+    </div>
+  </form>
+  <hr>
+  <p *ngFor="todo.todoName==null">No search records found!</p>
+  <hr>
+
+  <h2> Todo </h2>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Id </th>
+      <th>Todo Name </th>
+      <th>isActive </th>
+    </tr>
+    <tr>
+      <td>{{todo.id}}</td>
+      <td>{{todo.todoName}}</td>
+      <td>{{todo.isActive}}</td>
+    </tr>
+    </thead>
+  </table>
+</div>
+
